@@ -137,4 +137,17 @@ var pc1 = pc1.clip(bound)
 
 //PART3 texture feature extraction
 
+//Replace with the image from the PCA step
+
+var glcm = pc1.glcmTexture()
+var texture = glcm.select(['pc1_diss','pc1_savg'])
+
+var savgname = 'savg'+year
+var dissname = 'diss'+year
+
+//two texture file of every year
+var savg = glcm.select('pc1_savg').rename(savgname)
+var diss = glcm.select('pc1_diss').rename(dissname)
+
+//PART4 normalization of two texture features
 
